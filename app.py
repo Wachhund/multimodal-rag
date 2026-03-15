@@ -19,8 +19,12 @@ with st.sidebar:
         ["all", "text", "image", "pdf", "audio", "video"],
     )
 
+    @st.cache_data(ttl=60)
+    def _collections():
+        return db.get_collections()
+
     try:
-        collections = db.get_collections()
+        collections = _collections()
     except Exception:
         collections = []
     filter_collection = st.selectbox(
