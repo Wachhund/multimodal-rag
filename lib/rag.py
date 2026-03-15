@@ -37,7 +37,7 @@ def detect_content_type(mime: str, filename: str) -> str:
     if mime in MIME_MAP:
         return MIME_MAP[mime]
     ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else ""
-    if ext == "txt":
+    if ext in ("txt", "md"):
         return "text"
     if ext in ("png", "jpg", "jpeg", "webp", "gif"):
         return "image"

@@ -55,7 +55,7 @@ with tab_upload:
     st.subheader("Upload files to embed")
     uploaded_files = st.file_uploader(
         "Choose one or more files",
-        type=["txt", "png", "jpg", "jpeg", "webp", "gif", "pdf", "mp3", "wav", "mp4", "mov", "avi"],
+        type=["txt", "md", "png", "jpg", "jpeg", "webp", "gif", "pdf", "mp3", "wav", "mp4", "mov", "avi"],
         accept_multiple_files=True,
     )
     title = st.text_input("Document title (applied to all files)", placeholder="My document")
